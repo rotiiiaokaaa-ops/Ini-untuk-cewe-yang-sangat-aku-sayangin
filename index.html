@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Happy New Year Sayang! 🎉</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #ffecd2);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .login-container button {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .login-container button:hover {
+            background: #ff5252;
+        }
+
+        .animation-container {
+            display: none;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #ffecd2);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            margin: 0;
+            padding: 20px;
+            overflow-y: auto;
+            color: #333;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .sticker {
+            position: absolute;
+            font-size: 2em;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .text-line {
+            font-size: 1.5em;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            line-height: 1.4;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .firework {
+            font-size: 4em;
+            animation: bounce 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .heart {
+            color: red;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .form-container {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 30s;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .form-container button {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <!-- Halaman Login -->
+    <div class="login-container" id="login">
+        <h2>Login untuk Masuk 🎉</h2>
+        <input type="email" id="email" placeholder="Masukkan Gmail..." required>
+        <input type="password" id="password" placeholder="Masukkan Kata Sandi..." required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Halaman Animasi (tersembunyi awalnya) -->
+    <div class="animation-container" id="animation">
+        <div class="container">
+            <div class="firework">🎆 Happy New Year Sayang! 🎉</div>
+            
+            <!-- Stickers animasi -->
+            <div class="sticker" style="top: 10%; left: 10%;">😘</div>
+            <div class="sticker" style="top: 20%; right: 15%;">💖</div>
+            <div class="sticker" style="bottom: 30%; left: 20%;">🥰</div>
+            <div class="sticker" style="bottom: 20%; right: 10%;">🌟</div>
+            <div class="sticker" style="top: 50%; left: 50%;">🎈</div>
+            <div class="sticker" style="top: 70%; right: 20%;">😍</div>
+            <div class="sticker" style="bottom: 10%; left: 30%;">❤️</div>
+            <div class="sticker" style="top: 30%; right: 30%;">🌈</div>
+
+            <!-- Teks animasi untuk tahun baru -->
+            <div class="text-line" style="animation-delay: 1s;">HAIIII SAYANGGKUUU, SELAMATTT TAHUNNN BARUUU YAAA, AKUUU BERHARAPPP TAHUNNN INIII KITAAA BISAA LEBIHH BAHAGIA LAGIII,</div>
+            <div class="text-line" style="animation-delay: 3s;">AKUUU NDAAA NYANGKAAA KITAAA SUDAHHH PACARANNN SEELAMAAAA 2 TAHUNNN LEBIHH, DANNN AKUUU CINTAAA BANGETT SAMA AA AYANGGG,</div>
+            <div class="text-line" style="animation-delay: 5s;">SEMOGAAA DI TAHUNNN BARUU INIII, KITAAA BISAA BERSAMAAA SELALUUU, TANPAAA PUTUSSS NYAMBUNGGG LAGIII,</div>
+            <div class="text-line" style="animation-delay: 7s;">AKUUU AKANNN BERUSAHAAA JADII LEBIHH BAIKK, LEBIHH PENGERTIII, DANNN LEBIHH SAYANGGG KE AA AYANGGG,</div>
+            <div class="text-line" style="animation-delay: 9s;">YAAAA SAYANGGG, AKUUU MAUUU KITAAA BERDUAAA BERSAMAAA, HIDUPPP BER3, DANNN PUNYAAA KELUARGAAA KECILLL NANTIII,</div>
+            <div class="text-line" style="animation-delay: 11s;">AKUUU SELALUUU DO'AINNN AYANGGG SUPAYAAA SUKSESSS, BELAJARRR NYAAA SEMANGATTT, DANNN KALOO ADAAA MASALAHH, CERITAA KE AKUUU,</div>
+            <div class="text-line" style="animation-delay: 13s;">KARENA AA AYANGGG ITU PENTINGGG BANGETT BAGII AKUUU, AKUUU SAYANGGG BANGETT SAMA AA AYANGGG,</div>
+            <div class="text-line" style="animation-delay: 15s;">MAAPPP YAAA KALOO AKUUU POSESSIFF ATAUUU CENGENGG, TAPI AKUUU GAMPANGGG SAKITT HATIII KALOO AYANGGG JAUH,</div>
+            <div class="text-line" style="animation-delay: 17s;">SEMOGAAA TAHUNNN INIII KITAAA BISAA JADII PASANGANN YANGGG LEBIHH DEWASAA, LEBIHH MENGERTIII SATUU SAMAAA LAINN,</div>
+            <div class="text-line" style="animation-delay: 19s;">AKUUU BERHARAPPP BESARRR KE AA AYANGGG, SUPAYAAA KITAAA SELALUUU BERSAMAAA SAMPAIII MAUTT MEMISAHKANNN,</div>
+            <div class="text-line" style="animation-delay: 21s;">YAAAA SAYANGGG, AKUUU CINTAAA BANGETT SAMA AA AYANGGG, DANNN AKUUU AKANNN SELALUUU ADA AA BAGII AYANGGG,</div>
+            <div class="text-line" style="animation-delay: 23s;">SELAMATTT TAHUNNN BARUUU LAGIII YAAA, SEMOGAAA SEMUAAA HARAPANNN KITAAA TERWUJUDDD, HEHEE,</div>
+            <div class="text-line" style="animation-delay: 25s;">AKUUU SELALUUU CINTAAA SAMA AA AYANGGG <span class="heart">❤️</span></div>
+
+            <!-- Form balasan -->
+            <div class="form-container">
+                <h2>Balas Pesan Sayang! 💌</h2>
+                <input type="text" id="nama" placeholder="Masukkan nama kamu..." required>
+                <textarea id="balasan" rows="5" placeholder="Tulis balasan panjang kamu di sini..." required></textarea>
+                <button onclick="kirimPesan()">Kirim ke WhatsApp 📱</button>
+            </div>
+        </div>
+
+        <!-- Musik romantis -->
+        <audio autoplay loop>
+            <source src="musik_romantis.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value.toLowerCase();
+            const password = document.getElementById('password').value;
+            if (email.includes('@gmail.com') && password.trim() !== '') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('animation').style.display = 'block';
+                document.body.style.overflow = 'auto'; // Izinkan scroll setelah login
+            } else {
+                alert('Email harus berakhir dengan @gmail.com dan kata sandi tidak boleh kosong!');
+            }
+        }
+
+        function kirimPesan() {
+            const nama = document.getElementById('nama').value;
+            const balasan = document.getElementById('balasan').value;
+            if (nama && balasan) {
+                const pesan = `Hai, aku ${nama}. ${balasan}`;
+                const url = `https://wa.me/6282254388144?text=${encodeURIComponent(pesan)}`;
+                window.open(url, '_blank');
+            } else {
+                alert('Harap isi nama dan balasan!');
+            }
+        }
+    </script>
+</body>
+</html>
